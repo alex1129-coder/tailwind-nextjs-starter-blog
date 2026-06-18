@@ -36,7 +36,7 @@ export default function PostLayout({ content, children }: LayoutProps) {
         <header className="border-b border-gray-200 pt-8 pb-6">
           <div className="space-y-3">
             <dl>
-              <dt className="sr-only">Published on</dt>
+              <dt className="sr-only">發布於</dt>
               <dd className="text-sm font-medium text-gray-400">
                 <time dateTime={date}>
                   {new Date(date).toLocaleDateString(siteMetadata.locale, postDateTemplate)}

@@ -24,21 +24,21 @@ export default function Home({ posts, author, tags }: Props) {
       {/* Main: post list */}
       <div className="min-w-0 flex-1">
         <ul className="divide-y divide-gray-200">
-          {!posts.length && <li className="py-10 text-gray-500">No posts found.</li>}
+          {!posts.length && <li className="py-10 text-gray-500">尚無文章。</li>}
           {posts.slice(0, MAX_DISPLAY).map((post) => {
             const { slug, date, title, summary, tags: postTags } = post
             return (
               <li key={slug} className="py-10">
                 <article className="space-y-3">
                   <dl>
-                    <dt className="sr-only">Published on</dt>
+                    <dt className="sr-only">發布於</dt>
                     <dd className="text-sm font-medium text-gray-400">
                       <time dateTime={date}>{formatDate(date, siteMetadata.locale)}</time>
                     </dd>
                   </dl>
                   <div className="space-y-2">
                     <h2 className="text-xl leading-snug font-bold tracking-tight">
-                      <Link href={`/blog/${slug}`} className="text-[#112E23] hover:text-[#1A4D3A]">
+                      <Link href={`/blog/${slug}`} className="text-[#112E23] hover:text-[#1A4D3A] dark:text-[#E0DAC8] dark:hover:text-[#9CBFB3]">
                         {title}
                       </Link>
                     </h2>
@@ -53,9 +53,9 @@ export default function Home({ posts, author, tags }: Props) {
                     <Link
                       href={`/blog/${slug}`}
                       className="text-primary-500 hover:text-primary-600"
-                      aria-label={`Read more: "${title}"`}
+                      aria-label={`閱讀更多：「${title}」`}
                     >
-                      Read more &rarr;
+                      閱讀更多 →
                     </Link>
                   </div>
                 </article>
@@ -68,9 +68,9 @@ export default function Home({ posts, author, tags }: Props) {
             <Link
               href="/blog"
               className="text-primary-500 hover:text-primary-600"
-              aria-label="All posts"
+              aria-label="所有文章"
             >
-              All Posts &rarr;
+              所有文章 →
             </Link>
           </div>
         )}
@@ -82,7 +82,7 @@ export default function Home({ posts, author, tags }: Props) {
           {/* About Me */}
           {author && (
             <div>
-              <h3 className="mb-4 border-b-2 border-[#1A4D3A] pb-1 text-sm font-bold text-[#1A4D3A]">
+              <h3 className="mb-4 border-b-2 border-[#1A4D3A] pb-1 text-sm font-bold text-[#1A4D3A] dark:border-[#6FA598] dark:text-[#9CBFB3]">
                 關於我
               </h3>
               {author.avatar && (
@@ -94,14 +94,14 @@ export default function Home({ posts, author, tags }: Props) {
                   className="mb-3 rounded-full"
                 />
               )}
-              <p className="font-semibold text-[#112E23]">{author.name}</p>
+              <p className="font-semibold text-[#112E23] dark:text-[#E0DAC8]">{author.name}</p>
               {author.occupation && (
                 <p className="mt-1 text-sm text-gray-500">{author.occupation}</p>
               )}
               {author.company && <p className="text-sm text-gray-500">{author.company}</p>}
               <Link
                 href="/about"
-                className="mt-3 inline-block rounded border border-[#1A4D3A] px-3 py-1 text-sm font-medium text-[#1A4D3A] transition-colors hover:bg-[#1A4D3A] hover:text-white"
+                className="mt-3 inline-block rounded border border-[#1A4D3A] px-3 py-1 text-sm font-medium text-[#1A4D3A] transition-colors hover:bg-[#1A4D3A] hover:text-white dark:border-[#6FA598] dark:text-[#9CBFB3] dark:hover:bg-[#2D6B52]"
               >
                 了解更多
               </Link>
@@ -111,7 +111,7 @@ export default function Home({ posts, author, tags }: Props) {
           {/* Categories */}
           {sortedTags.length > 0 && (
             <div>
-              <h3 className="mb-4 border-b-2 border-[#1A4D3A] pb-1 text-sm font-bold text-[#1A4D3A]">
+              <h3 className="mb-4 border-b-2 border-[#1A4D3A] pb-1 text-sm font-bold text-[#1A4D3A] dark:border-[#6FA598] dark:text-[#9CBFB3]">
                 文章分類
               </h3>
               <ul className="space-y-1">
@@ -133,7 +133,7 @@ export default function Home({ posts, author, tags }: Props) {
           {/* Newsletter */}
           {siteMetadata.newsletter?.provider && (
             <div>
-              <h3 className="mb-4 border-b-2 border-[#1A4D3A] pb-1 text-sm font-bold text-[#1A4D3A]">
+              <h3 className="mb-4 border-b-2 border-[#1A4D3A] pb-1 text-sm font-bold text-[#1A4D3A] dark:border-[#6FA598] dark:text-[#9CBFB3]">
                 電子報
               </h3>
               <NewsletterWidget />

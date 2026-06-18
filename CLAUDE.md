@@ -99,6 +99,11 @@ bibliography: path    # for citation support
 | `EXPORT` | Set to enable static export mode |
 | `UNOPTIMIZED` | Disable Next.js image optimization |
 
+## Deployment
+
+- **Platform**: Vercel
+- **Production domain**: gouen.dev
+
 ## Adding Content
 
 - New blog post: create `data/blog/your-post.mdx` with required frontmatter

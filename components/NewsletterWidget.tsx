@@ -32,24 +32,20 @@ export default function NewsletterWidget() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-2">
+    <div className="space-y-2">
       <p className="text-sm text-gray-500">訂閱最新文章，直送信箱。</p>
       <input
         type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
         placeholder="your@email.com"
-        required
-        className="w-full rounded border border-gray-300 px-3 py-2 text-sm text-[#112E23] placeholder-gray-400 focus:border-[#1A4D3A] focus:outline-none"
+        disabled
+        className="w-full cursor-not-allowed rounded border border-gray-200 bg-gray-50 px-3 py-2 text-sm text-gray-400 placeholder-gray-300"
       />
       <button
-        type="submit"
-        disabled={status === 'loading'}
-        className="w-full rounded bg-[#1A4D3A] px-3 py-2 text-sm font-medium text-white transition-colors hover:bg-[#8B2635] disabled:opacity-60"
+        disabled
+        className="w-full cursor-not-allowed rounded bg-gray-300 px-3 py-2 text-sm font-medium text-gray-500"
       >
-        {status === 'loading' ? '訂閱中...' : '訂閱'}
+        準備中...
       </button>
-      {status === 'error' && <p className="text-xs text-red-500">訂閱失敗，請稍後再試。</p>}
-    </form>
+    </div>
   )
 }

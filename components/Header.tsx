@@ -1,6 +1,6 @@
 import siteMetadata from '@/data/siteMetadata'
 import headerNavLinks from '@/data/headerNavLinks'
-import Logo from '@/data/logo.svg'
+import Image from 'next/image'
 import Link from './Link'
 import MobileNav from './MobileNav'
 import ThemeSwitch from './ThemeSwitch'
@@ -10,12 +10,12 @@ const Header = () => {
   const stickyClass = siteMetadata.stickyNav ? ' sticky top-0 z-50' : ''
 
   return (
-    <header className={`w-full bg-[#1A4D3A]${stickyClass}`}>
+    <header className={`w-full bg-forest${stickyClass}`}>
       <div className="relative mx-auto flex max-w-5xl items-center justify-between px-4 py-5 sm:px-6 xl:px-0">
         {/* Left: Logo */}
         <Link href="/" aria-label={siteMetadata.headerTitle}>
           <div className="flex items-center gap-2">
-            <Logo />
+            <Image src="/static/images/logo.png" alt="logo" width={32} height={32} className="rounded-full" />
             {typeof siteMetadata.headerTitle === 'string' ? (
               <span className="hidden text-xl font-semibold text-white sm:block">
                 {siteMetadata.headerTitle}
@@ -34,7 +34,7 @@ const Header = () => {
               <Link
                 key={link.title}
                 href={link.href}
-                className="font-medium whitespace-nowrap text-white hover:text-[#8B2635]"
+                className="hover:text-wine font-medium whitespace-nowrap text-white"
               >
                 {link.title}
               </Link>

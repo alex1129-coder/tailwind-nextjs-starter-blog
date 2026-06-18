@@ -55,6 +55,14 @@
   --z-80: 80;
 }
 
+/* Dark mode brand color overrides */
+.dark {
+  --color-canvas: #1C2820;
+  --color-ink:    #E0DAC8;
+  --color-wine:   #C25060;
+  --color-kraft:  #A07848;
+}
+
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,
   so we've added these compatibility styles to make sure everything still

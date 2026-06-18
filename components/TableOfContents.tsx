@@ -90,7 +90,7 @@ export default function TableOfContents({ toc }: Props) {
       {/* Toggle button */}
       <button
         onClick={() => setOpen((v) => !v)}
-        aria-label={open ? 'Close table of contents' : 'Open table of contents'}
+        aria-label={open ? '關閉目錄' : '開啟目錄'}
         className="relative flex h-10 w-10 items-center justify-center rounded-full bg-[#1A4D3A] text-white shadow-md transition-colors hover:bg-[#8B2635]"
       >
         {open ? (
