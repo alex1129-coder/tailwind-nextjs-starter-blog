@@ -3,10 +3,11 @@ const siteMetadata = {
   title: 'Guo-En Blog',
   author: 'Guo-en',
   headerTitle: 'Guo-En Blog',
-  description: 'A blog created with Next.js and Tailwind.css',
+  description:
+    '許國恩 (Guo En) 的個人技術部落格，分享前後端開發心得、軟體工程師轉職的學習紀錄，偶爾也寫生活與旅遊雜記。',
   language: 'zh-TW',
   theme: 'light', // system, dark or light
-  siteUrl: 'https://guoen.dev/',
+  siteUrl: 'https://guoen.dev',
   siteRepo: 'https://github.com/alex1129-coder/tailwind-nextjs-starter-blog',
   siteLogo: `${process.env.BASE_PATH || ''}/static/images/logo.png`,
   socialBanner: `${process.env.BASE_PATH || ''}/static/images/twitter-card.png`,

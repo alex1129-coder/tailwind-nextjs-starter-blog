@@ -121,8 +121,10 @@ export const Blog = defineDocumentType(() => ({
         datePublished: doc.date,
         dateModified: doc.lastmod || doc.date,
         description: doc.summary,
-        image: doc.images ? doc.images[0] : siteMetadata.socialBanner,
-        url: `${siteMetadata.siteUrl}/${doc._raw.flattenedPath}`,
+        image: doc.images
+          ? doc.images[0]
+          : `${siteMetadata.siteUrl.replace(/\/$/, '')}${siteMetadata.socialBanner}`,
+        url: `${siteMetadata.siteUrl.replace(/\/$/, '')}/${doc._raw.flattenedPath}`,
       }),
     },
   },
@@ -136,7 +138,7 @@ export const Authors = defineDocumentType(() => ({
     name: { type: 'string', required: true },
     avatar: { type: 'string' },
     occupation: { type: 'string' },
-    company: { type: 'string' },
+    university: { type: 'string' },
     email: { type: 'string' },
     twitter: { type: 'string' },
     bluesky: { type: 'string' },

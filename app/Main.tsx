@@ -101,7 +101,7 @@ export default function Home({ posts, author, tags }: Props) {
               {author.occupation && (
                 <p className="mt-1 text-sm text-gray-500">{author.occupation}</p>
               )}
-              {author.company && <p className="text-sm text-gray-500">{author.company}</p>}
+              {author.university && <p className="text-sm text-gray-500">{author.university}</p>}
               <Link
                 href="/about"
                 className="mt-3 inline-block rounded border border-[#1A4D3A] px-3 py-1 text-sm font-medium text-[#1A4D3A] transition-colors hover:bg-[#1A4D3A] hover:text-white dark:border-[#6FA598] dark:text-[#9CBFB3] dark:hover:bg-[#2D6B52]"
