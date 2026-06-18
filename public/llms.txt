@@ -1,0 +1,22 @@
+# Guo-En Blog (guoen.dev)
+
+> 許國恩 (Guo En) 的個人技術部落格，分享前後端開發心得、軟體工程師轉職的學習紀錄，偶爾也寫生活與旅遊雜記。網站語言為繁體中文 (zh-TW)。
+
+## 關於作者
+- 姓名：許國恩 (Guo En)
+- 身分：全端／軟體工程師（2025 年轉職）
+- 背景：國立政治大學教育學系，曾赴日本富山交換
+- GitHub: https://github.com/alex1129-coder
+- LinkedIn: https://www.linkedin.com/in/guo-en-hsu-a79643384/
+
+## 重要頁面
+- 關於我: https://guoen.dev/about
+- 所有文章: https://guoen.dev/blog
+- 作品集: https://guoen.dev/projects
+- 標籤分類: https://guoen.dev/tags
+
+## 內容主題
+- 前端開發：React、Next.js
+- 後端與軟體工程基礎
+- 軟體工程師轉職心得
+- 生活與旅遊雜記
