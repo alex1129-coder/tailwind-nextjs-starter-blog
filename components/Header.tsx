@@ -21,6 +21,7 @@ const Header = () => {
               width={32}
               height={32}
               className="rounded-full"
+              priority
             />
             {typeof siteMetadata.headerTitle === 'string' ? (
               <span className="hidden text-xl font-semibold text-white sm:block">

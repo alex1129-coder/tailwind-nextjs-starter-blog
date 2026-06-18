@@ -21,6 +21,7 @@ export default function Home({ posts, author, tags }: Props) {
 
   return (
     <div className="flex flex-col gap-8 lg:flex-row lg:gap-10">
+      <h1 className="sr-only">Guo-En Blog — 許國恩的個人技術部落格</h1>
       {/* Main: post list */}
       <div className="min-w-0 flex-1">
         <ul className="divide-y divide-gray-200">
@@ -95,6 +96,7 @@ export default function Home({ posts, author, tags }: Props) {
                   width={72}
                   height={72}
                   className="mb-3 rounded-full"
+                  priority
                 />
               )}
               <p className="font-semibold text-[#112E23] dark:text-[#E0DAC8]">{author.name}</p>

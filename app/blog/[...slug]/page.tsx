@@ -63,7 +63,7 @@ export async function generateMetadata(props: {
       title: post.title,
       description: post.summary,
       siteName: siteMetadata.title,
-      locale: 'en_US',
+      locale: siteMetadata.locale.replace('-', '_'),
       type: 'article',
       publishedTime: publishedAt,
       modifiedTime: modifiedAt,
@@ -103,11 +103,18 @@ export default async function Page(props: { params: Promise<{ slug: string[] }> 
     return coreContent(authorResults as Authors)
   })
   const mainContent = coreContent(post)
+  const siteUrl = siteMetadata.siteUrl.replace(/\/$/, '')
   const jsonLd = post.structuredData
   jsonLd['author'] = authorDetails.map((author) => {
+    const sameAs = [author.github, author.linkedin].filter(Boolean)
     return {
       '@type': 'Person',
       name: author.name,
+      url: `${siteUrl}/about`,
+      ...(author.avatar
+        ? { image: author.avatar.includes('http') ? author.avatar : siteUrl + author.avatar }
+        : {}),
+      ...(sameAs.length > 0 ? { sameAs } : {}),
     }
   })
 
