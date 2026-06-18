@@ -107,7 +107,7 @@ export default function ListLayoutWithTags({
                   return (
                     <li key={t} className="my-1">
                       {isActive ? (
-                        <span className="flex items-center px-3 py-2 text-sm font-bold text-[#1A4D3A] dark:text-[#9CBFB3] uppercase">
+                        <span className="flex items-center px-3 py-2 text-sm font-bold text-[#1A4D3A] uppercase dark:text-[#9CBFB3]">
                           {`${t} (${tagCounts[t]})`}
                         </span>
                       ) : (

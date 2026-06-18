@@ -38,7 +38,10 @@ export default function Home({ posts, author, tags }: Props) {
                   </dl>
                   <div className="space-y-2">
                     <h2 className="text-xl leading-snug font-bold tracking-tight">
-                      <Link href={`/blog/${slug}`} className="text-[#112E23] hover:text-[#1A4D3A] dark:text-[#E0DAC8] dark:hover:text-[#9CBFB3]">
+                      <Link
+                        href={`/blog/${slug}`}
+                        className="text-[#112E23] hover:text-[#1A4D3A] dark:text-[#E0DAC8] dark:hover:text-[#9CBFB3]"
+                      >
                         {title}
                       </Link>
                     </h2>
