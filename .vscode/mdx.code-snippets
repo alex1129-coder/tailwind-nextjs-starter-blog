@@ -1,0 +1,20 @@
+{
+  "MDX Blog Post Frontmatter": {
+    "scope": "mdx,markdown",
+    "prefix": "fm",
+    "body": [
+      "---",
+      "title: ${1:文章標題}",
+      "date: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}",
+      "tags: [${2:tag1}, ${3:tag2}]",
+      "summary: ${4:50-160 字元的摘要，也是 meta description}",
+      "draft: false",
+      "authors: [default]",
+      "layout: PostLayout",
+      "---",
+      "",
+      "$0"
+    ],
+    "description": "Insert MDX blog post frontmatter"
+  }
+}

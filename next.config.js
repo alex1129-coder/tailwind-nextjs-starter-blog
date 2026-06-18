@@ -68,6 +68,9 @@ module.exports = () => {
     basePath,
     reactStrictMode: true,
     trailingSlash: true,
+    // Allow dynamic metadata routes (opengraph-image) to serve without the
+    // trailing-slash redirect that otherwise 404s them.
+    skipTrailingSlashRedirect: true,
     turbopack: {
       root: process.cwd(),
       rules: {

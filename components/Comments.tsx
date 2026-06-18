@@ -10,6 +10,12 @@ export default function Comments({ slug }: { slug: string }) {
   if (!siteMetadata.comments?.provider) {
     return null
   }
+
+  // 暫時隱藏留言區：未設定 giscus 環境變數前不顯示。
+  // 在 .env.local（本機）與 Vercel（線上）填入 giscus ID 後會自動顯示。
+  if (siteMetadata.comments.provider === 'giscus' && !siteMetadata.comments.giscusConfig?.repo) {
+    return null
+  }
   return (
     <>
       {loadComments ? (

@@ -71,7 +71,6 @@ export default function TableOfContents({ toc }: Props) {
                 <li key={item.url} style={{ paddingLeft: `${(item.depth - 2) * 12}px` }}>
                   <a
                     href={item.url}
-                    onClick={() => setOpen(false)}
                     className={`block leading-snug transition-colors duration-150 ${
                       isActive
                         ? 'font-semibold text-[#1A4D3A]'

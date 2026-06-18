@@ -102,7 +102,7 @@ bibliography: path    # for citation support
 ## Deployment
 
 - **Platform**: Vercel
-- **Production domain**: gouen.dev
+- **Production domain**: guoen.dev
 
 ## Adding Content
 

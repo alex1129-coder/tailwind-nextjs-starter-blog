@@ -1,4 +1,4 @@
-import 'css/prism.css'
+import 'css/code.css'
 import 'katex/dist/katex.css'
 
 import PageTitle from '@/components/PageTitle'
@@ -39,15 +39,22 @@ export async function generateMetadata(props: {
   const publishedAt = new Date(post.date).toISOString()
   const modifiedAt = new Date(post.lastmod || post.date).toISOString()
   const authors = authorDetails.map((author) => author.name)
-  let imageList = [siteMetadata.socialBanner]
+
+  // Use explicit frontmatter images if present; otherwise generate one via /og.
+  let imageList: string[]
   if (post.images) {
     imageList = typeof post.images === 'string' ? [post.images] : post.images
+  } else {
+    const ogParams = new URLSearchParams({
+      title: post.title,
+      date: new Date(post.date).toISOString().slice(0, 10),
+      tags: (post.tags ?? []).slice(0, 3).join(','),
+    })
+    imageList = [`/og?${ogParams.toString()}`]
   }
-  const ogImages = imageList.map((img) => {
-    return {
-      url: img && img.includes('http') ? img : siteMetadata.siteUrl + img,
-    }
-  })
+  const ogImages = imageList.map((img) => ({
+    url: img.includes('http') ? img : siteMetadata.siteUrl.replace(/\/$/, '') + img,
+  }))
 
   return {
     title: post.title,
@@ -68,7 +75,7 @@ export async function generateMetadata(props: {
       card: 'summary_large_image',
       title: post.title,
       description: post.summary,
-      images: imageList,
+      images: ogImages.map((i) => i.url),
     },
   }
 }

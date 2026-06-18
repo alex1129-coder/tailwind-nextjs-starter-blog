@@ -1,4 +1,6 @@
 {
   "typescript.tsdk": "node_modules/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "pasteImage.path": "${projectRoot}/public/static/images",
+  "pasteImage.insertPattern": "![${imageFileName}](/static/images/${imageFileName})"
 }
